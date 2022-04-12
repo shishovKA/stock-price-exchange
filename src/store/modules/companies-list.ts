@@ -16,7 +16,7 @@ class CompaniesList extends VuexModule {
       redirect: "follow",
     };
     fetch(
-      `http://app-b96e2a39-7c83-44b5-b229-27d361327094.cleverapps.io/quote/${symbol}`,
+      `https://app-b96e2a39-7c83-44b5-b229-27d361327094.cleverapps.io/quote/${symbol}`,
       // @ts-ignore
       requestOptions
     )
