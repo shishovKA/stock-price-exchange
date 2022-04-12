@@ -18,24 +18,24 @@ export default class App extends Vue {}
 </script>
 
 <style lang="less">
+html,
+body,
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
-nav {
-  padding: 30px;
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+body {
+  margin: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100%;
+  background: #e5e5e5;
 }
 </style>

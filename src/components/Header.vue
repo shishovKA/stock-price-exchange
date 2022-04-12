@@ -1,5 +1,7 @@
 <template>
-  <header>header</header>
+  <header>
+    <p class="title">🧦 Stock in sock</p>
+  </header>
 </template>
 
 <script lang="ts">
@@ -16,6 +18,13 @@ export default class Header extends Vue {
 header {
   background: plum;
   width: 100%;
-  height: 100px;
+  padding: 1rem;
+}
+
+.title {
+  font-family: Inter;
+  color: white;
+  margin: 0;
+  font-size: 20px;
 }
 </style>
