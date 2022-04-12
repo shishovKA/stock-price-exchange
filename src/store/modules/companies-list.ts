@@ -1,5 +1,5 @@
 import store from "../index";
-import { storedList } from "./symbol-list";
+import { storedList } from "../../static-data/symbol-list";
 import { VuexModule, Module } from "vuex-module-decorators";
 
 @Module

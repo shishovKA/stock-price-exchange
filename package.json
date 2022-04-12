@@ -9,6 +9,7 @@
     "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
+    "@trevoreyre/autocomplete-vue": "^2.2.0",
     "core-js": "^3.8.3",
     "vue": "^2.6.14",
     "vue-class-component": "^7.2.3",
