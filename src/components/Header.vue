@@ -49,18 +49,9 @@ export default class Header extends Vue {
   }
 
   async handleSubmit(result: string) {
-    /*
-    // @ts-ignore
-    const res = result || this.$refs.searchInput.value;
-    const cmp: Company | undefined = this.$store.getters.allCompanies.find(
-      (el: Company) => el.companyName == res
-    );
-    if (cmp !== undefined) {
-      this.$router
-        .push({ path: `/Companies/Company/${cmp.companyID}` })
-        .catch((err) => {});
-    }
-    */
+    const symbol = result.slice(0, result.indexOf(":"));
+    console.log(symbol);
+    this.$store.dispatch("fetchCompanyQuote", symbol);
   }
 }
 </script>

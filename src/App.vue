@@ -18,6 +18,10 @@ export default class App extends Vue {}
 </script>
 
 <style lang="less">
+* {
+  box-sizing: border-box;
+}
+
 html,
 body,
 #app {
@@ -38,5 +42,10 @@ body {
   margin-right: auto;
   min-height: 100%;
   background: #e5e5e5;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
 }
 </style>

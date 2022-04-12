@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "deploy": "git add dist && git commit -m 'adding dist subtree' && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "@trevoreyre/autocomplete-vue": "^2.2.0",
