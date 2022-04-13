@@ -51,7 +51,7 @@ export default class Header extends Vue {
   async handleSubmit(result: string) {
     const symbol = result.slice(0, result.indexOf(":"));
     console.log(symbol);
-    this.$store.dispatch("fetchCompanyQuote", symbol);
+    this.$store.dispatch("addCompanyToList", symbol);
   }
 }
 </script>

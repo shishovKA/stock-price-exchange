@@ -4,7 +4,7 @@
       <p>{{ row.symbol }}</p>
       <p>{{ row.longName }}</p>
       <p>
-        {{ row.postMarketPrice }}<span> {{ row.currencySymbol }}</span>
+        {{ row.regularMarketPrice }}<span> {{ row.currencySymbol }}</span>
       </p>
       <p>{{ row.regularMarketChangePercent }}<span> %</span></p>
     </div>
