@@ -21,5 +21,6 @@ export default class HomeView extends Vue {}
   width: 100%;
   flex: 1 1 auto;
   background-color: black;
+  display: flex;
 }
 </style>

@@ -28,6 +28,8 @@ export default class StocksTable extends Vue {
 .table {
   width: 100%;
   padding: 1rem 5rem;
+  background-color: #333333;
+  flex: 1 1 auto;
 }
 
 .row {
