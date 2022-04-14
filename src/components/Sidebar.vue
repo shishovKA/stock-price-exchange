@@ -9,7 +9,12 @@
         <img src="../../src/assets/chart-histogram.svg" />
         Dashboard
       </router-link>
-      <router-link class="menu__link" to="/portfolio">
+      <router-link
+        :disabled="true"
+        to="/portfolio"
+        class="menu__link disabled"
+        :event="''"
+      >
         <img src="../../src/assets/handbag.svg" />
         Portfolio
       </router-link>
@@ -79,6 +84,13 @@ export default class Sidebar extends Vue {}
   }
   &:hover {
     opacity: 0.8;
+  }
+}
+
+.disabled {
+  opacity: 0.3;
+  &:hover {
+    opacity: 0.3;
   }
 }
 

@@ -64,7 +64,7 @@ header {
   height: 72px;
   background-color: #1e1c1c;
   width: 100%;
-  padding: 1.6rem 6.7rem;
+  padding: 1.6rem 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
