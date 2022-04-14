@@ -1,16 +1,22 @@
 <template>
   <div id="app">
-    <Header />
-    <router-view />
+    <Sidebar />
+    <div class="page__container">
+      <Header />
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+
+import Sidebar from "@/components/Sidebar.vue";
 import Header from "@/components/Header.vue";
 
 @Component({
   components: {
+    Sidebar,
     Header,
   },
 })
@@ -45,10 +51,17 @@ body {
   margin-left: auto;
   margin-right: auto;
   min-height: 100%;
-  background: #e5e5e5;
+  background: #333333;
+  color: #edeff1;
 }
 
 #app {
+  display: flex;
+  flex-direction: row;
+}
+
+.page__container {
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
 }

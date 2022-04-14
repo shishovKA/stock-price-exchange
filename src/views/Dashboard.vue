@@ -13,7 +13,7 @@ import StocksTable from "@/components/StocksTable.vue";
     StocksTable,
   },
 })
-export default class HomeView extends Vue {}
+export default class Dashboard extends Vue {}
 </script>
 
 <style lang="less" scoped>
@@ -22,5 +22,6 @@ export default class HomeView extends Vue {}
   flex: 1 1 auto;
   background-color: black;
   display: flex;
+  overflow-y: auto;
 }
 </style>

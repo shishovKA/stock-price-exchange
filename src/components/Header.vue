@@ -15,7 +15,7 @@
 
 <script lang="ts">
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Ref } from "vue-property-decorator";
 // @ts-ignore
 import Autocomplete from "@trevoreyre/autocomplete-vue";
 
@@ -25,6 +25,8 @@ import Autocomplete from "@trevoreyre/autocomplete-vue";
   },
 })
 export default class Header extends Vue {
+  @Ref() searchInput!: any;
+
   get symbolList() {
     return this.$store.getters.companiesSymbolList;
   }
@@ -47,9 +49,11 @@ export default class Header extends Vue {
   }
 
   async handleSubmit(result: string) {
+    if (!result) return;
     const symbol = result.slice(0, result.indexOf(":"));
-    console.log(symbol);
-    this.$store.dispatch("addCompanyToList", symbol);
+    this.$store.dispatch("addCompanyToList", symbol).finally(() => {
+      this.searchInput.value = "";
+    });
   }
 }
 </script>
@@ -66,34 +70,9 @@ header {
   justify-content: space-between;
 }
 
-.title {
-  color: white;
-  margin: 0;
-  font-size: 20px;
+.search {
+  flex: 0 1 450px;
 }
-
-/*
-.search::v-deep div {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 22px;
-  letter-spacing: 0.01em;
-
-  border-radius: 30px;
-  background-color: #1e1c1c;
-  color: #edeff1;
-
-  input {
-    height: 40px;
-    border: 1px solid #edeff1;
-    border-radius: 30px;
-    background-color: #1e1c1c;
-    color: #edeff1;
-  }
-}
-*/
 </style>
 
 <style lang="less">
@@ -147,12 +126,12 @@ header {
 
 .autocomplete-result-list {
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid #edeff1;
   padding: 0;
   box-sizing: border-box;
   max-height: 296px;
   overflow-y: auto;
-  background: #fff;
+  background: #1e1c1c;
   list-style: none;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
 }
@@ -181,7 +160,7 @@ header {
 
 .autocomplete-result:hover,
 .autocomplete-result[aria-selected="true"] {
-  background-color: rgba(0, 0, 0, 0.06);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 @keyframes rotate {
