@@ -1,4 +1,10 @@
-# stock-price-exchange
+# Проект: Stocks in socks
+
+## Ссылка на приложение 
+Открыть [Деплой приложения](https://shishovka.github.io/stock-price-exchange).
+
+## Репозиторий нашего api 
+Ссылка на репозиторий [stock-price-api](https://github.com/shishovKA/stock-price-api).
 
 ## Project setup
 ```
@@ -14,11 +20,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
