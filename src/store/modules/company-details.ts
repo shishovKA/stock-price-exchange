@@ -41,7 +41,7 @@ class CompanyDetails extends VuexModule {
     };
 
     return fetch(
-      "http://app-b96e2a39-7c83-44b5-b229-27d361327094.cleverapps.io/historical",
+      "https://app-b96e2a39-7c83-44b5-b229-27d361327094.cleverapps.io/historical",
       //@ts-ignore
       requestOptions
     )
