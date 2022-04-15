@@ -58,6 +58,7 @@ export default class StocksTable extends Vue {
   }
 
   openCompany(symbol: string) {
+    this.$store.commit("setCurrentCompany", symbol);
     this.$router.push({ name: "company", params: { symbol: symbol } });
   }
 }

@@ -194,24 +194,13 @@ export default class ChartPanel extends Vue {
       if (this.chart_axis) this.chart_1.bindOtherChartTooltips(this.chart_axis);
     }
   }
-
-  /*
-
-  get stock_zeroRow(): number[] {
-    return this.stockPriceData.map((el: any) => 0);
-  }
-
-  
-
-*/
 }
 </script>
 
 <style scoped lang="less">
 .chart-panel {
-  max-width: 700px;
   width: 100%;
-  margin-bottom: 50px;
+  padding: 1rem 2.5rem;
 }
 
 .chart__container {
@@ -332,7 +321,7 @@ export default class ChartPanel extends Vue {
   justify-content: center;
   text-align: center;
 
-  font-family: Inter;
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -360,7 +349,7 @@ export default class ChartPanel extends Vue {
 }
 
 .menu__item {
-  font-family: Inter;
+  font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -387,7 +376,6 @@ export default class ChartPanel extends Vue {
   margin: 0 0 0 10px;
   border: 1px solid #3d3d3d;
   border-radius: 5px;
-  font-family: Inter;
   font-style: normal;
   font-weight: normal;
   font-size: 15px;

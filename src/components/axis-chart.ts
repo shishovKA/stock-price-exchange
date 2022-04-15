@@ -36,7 +36,7 @@ export function create_rosie_xAxis_chart(container: HTMLElement, data: any[]) {
   xAxis.ticks.settickDrawOptions(-4, 1, "#D7D7D74D");
   xAxis.ticks.label.setOptions(true, "#FFFFFF99", "bottom", 11, [
     "11",
-    '"Inter"',
+    '"Open Sans"',
   ]);
   const xLabelsStrings = xLabels.map((el) => {
     return el.toLocaleDateString("en", {
@@ -63,7 +63,7 @@ export function create_rosie_xAxis_chart(container: HTMLElement, data: any[]) {
   chart
     .findPlotById("none")
     ?.addTooltip("ttId", "date_x_bottom", 0.5, "black", "#ffffff", 4, xLabels)
-    .label.setOptions(true, "black", "bottom", 20, ["14", '"Inter"']);
+    .label.setOptions(true, "black", "bottom", 20, ["14", '"Open Sans"']);
 
   // настраиваем Min Max осей
   xAxis.setMinMaxStatic(chart.data.findExtremes("val"));

@@ -1,6 +1,7 @@
 <template>
   <header>
     <autocomplete
+      v-if="isDashBoard"
       ref="searchInput"
       :search="search"
       :auto-select="true"
@@ -10,6 +11,10 @@
       @submit="handleSubmit"
     >
     </autocomplete>
+    <template v-else>
+      <router-link to="/" class="back">❮</router-link>
+      <h2 class="company-name">{{ companyInfo.longName }}</h2>
+    </template>
   </header>
 </template>
 
@@ -26,6 +31,14 @@ import Autocomplete from "@trevoreyre/autocomplete-vue";
 })
 export default class Header extends Vue {
   @Ref() searchInput!: any;
+
+  get isDashBoard(): boolean {
+    return this.$route.name === "dashboard";
+  }
+
+  get companyInfo() {
+    return this.$store.getters.companyInfo;
+  }
 
   get symbolList() {
     return this.$store.getters.companiesSymbolList;
@@ -67,11 +80,38 @@ header {
   padding: 1.6rem 4rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .search {
   flex: 0 1 450px;
+}
+
+.company-name {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  color: #edeff1;
+}
+
+.back {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  color: #edeff1;
+  text-decoration: none;
+  outline: none;
+  text-transform: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff19;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    opacity: 0.6;
+  }
 }
 </style>
 

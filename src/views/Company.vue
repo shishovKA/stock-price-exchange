@@ -12,7 +12,6 @@ import ChartPanel from "@/components/ChartPanel.vue";
 export default class Company extends Vue {
   created() {
     const symbol = this.$route.params.symbol;
-    this.$store.commit("setCurrentCompany", symbol);
   }
 
   get chartData() {

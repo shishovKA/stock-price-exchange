@@ -8,6 +8,10 @@ class CompanyDetails extends VuexModule {
   currentCompany: any = null;
   historicalList: any[] = [];
 
+  get companyInfo() {
+    return this.currentCompany;
+  }
+
   @Mutation
   public setCurrentCompany(symbol: string) {
     const find = store.getters.stocksTable.find((cmp: any) => {
@@ -17,12 +21,10 @@ class CompanyDetails extends VuexModule {
     else {
       this.currentCompany = null;
     }
-    console.log(this.currentCompany);
   }
 
   @Action
   public fetchCompanyHistoricalData(payload: any) {
-    console.log(payload);
     const { symbol, from, to } = payload;
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");

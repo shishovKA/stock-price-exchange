@@ -4,6 +4,8 @@ import Dashboard from "../views/Dashboard.vue";
 import Portfolio from "../views/Portfolio.vue";
 import Company from "../views/Company.vue";
 
+import store from "../store/index";
+
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
@@ -17,6 +19,13 @@ const routes: Array<RouteConfig> = [
     path: "/company/:symbol",
     name: "company",
     component: Company,
+    beforeEnter: (to, from, next) => {
+      if (!store.getters.companyInfo) {
+        next({ path: "/" });
+      } else {
+        next();
+      }
+    },
   },
   {
     path: "/portfolio",

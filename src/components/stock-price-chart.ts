@@ -42,8 +42,8 @@ export function createChart_1(container: HTMLElement, data: any[]) {
   yAxis.ticks.settickDrawOptions(...yTicksDrawOptions);
   yAxis.ticks.label
     .setOptions(true, "#B2B2B2", "right", 0)
-    .setFontOptions(12, "Inter", "normal")
-    .setOffset(25, 0).units = "%";
+    .setFontOptions(12, "Open Sans", "normal")
+    .setOffset(25, 0).units = "$";
   yAxis.grid.setOptions(...yGridDrawOptions);
 
   // создаем Plots
@@ -90,7 +90,7 @@ export function createChart_1(container: HTMLElement, data: any[]) {
       "#F9F9F9",
       labels_values
     )
-    .label.setOptions(true, "#FFFFFF", "top", 0, ["11", '"Inter"'])
+    .label.setOptions(true, "#FFFFFF", "top", 0, ["11", '"Open Sans"'])
     .setCenterX(0)
     .setOffset(-5, 5);
 
@@ -135,7 +135,7 @@ export const changeRange = (row: number[]) => {
   chart.data.findSeriesById("line_2")?.replaceSeriesData([green_line], false);
   chart.data.findSeriesById("line_z")?.replaceSeriesData([zeroSeries], false);
 
-  const labels_values = row.map((el) => el.toFixed(2) + "%");
+  const labels_values = row.map((el) => el.toFixed(2) + "$");
   chart
     .findPlotById("red_line")
     ?.findTooltipById("value")
