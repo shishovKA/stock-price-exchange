@@ -85,19 +85,5 @@ class CompaniesList extends VuexModule {
     }
     console.warn("tracked_companies_list is empty");
   }
-
-  /*
-  @Action loadViewedList() {
-    const storagedList = storage.getItem('viewedList');
-    if (storagedList) {
-      store.commit('setViewedList', JSON.parse(storagedList));
-    }
-  }
-
-  @Mutation setViewedList(list: viewedCompanyInfo[]) {
-    this.viewedList.splice(0, this.viewedList.length, ...list);
-  }
-
-  */
 }
 export default CompaniesList;

@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Dashboard from "../views/Dashboard.vue";
 import Portfolio from "../views/Portfolio.vue";
+import Company from "../views/Company.vue";
 
 Vue.use(VueRouter);
 
@@ -11,6 +12,11 @@ const routes: Array<RouteConfig> = [
     path: "/dashboard",
     name: "dashboard",
     component: Dashboard,
+  },
+  {
+    path: "/company/:symbol",
+    name: "company",
+    component: Company,
   },
   {
     path: "/portfolio",

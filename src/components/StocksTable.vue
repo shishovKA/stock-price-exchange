@@ -1,7 +1,12 @@
 <template>
   <div class="table">
     <transition-group tag="div" name="list">
-      <div v-for="row in table" :key="row.symbol" class="row">
+      <div
+        v-for="row in table"
+        :key="row.symbol"
+        class="row"
+        @click="openCompany(row.symbol)"
+      >
         <p
           class="symbol"
           :class="{
@@ -51,6 +56,10 @@ export default class StocksTable extends Vue {
   get table() {
     return this.$store.getters.stocksTable;
   }
+
+  openCompany(symbol: string) {
+    this.$router.push({ name: "company", params: { symbol: symbol } });
+  }
 }
 </script>
 
@@ -69,9 +78,13 @@ export default class StocksTable extends Vue {
   grid-gap: 10px;
   font-size: 16px;
   padding: 8px 4rem;
-  margin: 3px 0;
+  margin: 3px 15px 3px 0;
   border-radius: 4px;
   background-color: #333333;
+  cursor: pointer;
+  &:hover {
+    background-color: #3333337d;
+  }
   p {
     margin: 0;
     display: flex;
